@@ -20,10 +20,10 @@ class VoxelClustering(BasePooling):
     voxel_clustering_fn = hk.without_apply_rng(hk.transform(voxel_clustering_forward))
 
     # Initialize the Haiku module
-    params = voxel_clustering_fn.init(None, point[0], particle_type)
+    params = voxel_clustering_fn.init(None, features, particle_type)
 
     # Apply the module
-    coarse_sample, new_particle_types = voxel_clustering_fn.apply(params, point[0], particle_type)
+    coarse_sample, new_particle_types = voxel_clustering_fn.apply(params, features, particle_type)
     '''
     def __init__(self, voxel_size, bounds):
         '''
