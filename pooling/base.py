@@ -22,8 +22,9 @@ class BasePooling(hk.Module, ABC):
             sample: Tuple with feature dictionary and particle type. Since pooling / clustering is done positionally, it must include position information.
                 - "abs_pos" (N, K+1, dim), absolute positions
         Returns:
-            Tuple with dictionary of cluster information and coarse particle types. Dictionary contains:
-                - "assignments" (N) - assignments for each original node
-            Particle types: (N')
+            Tuple with dictionary of cluster information and coarse particle types. 
+                - Dictionary contains:
+                    - "coarse_ids" (N) - assignments for each original node
+                - Particle types: (N') - types for each coarse-level particle
         """
         raise NotImplementedError

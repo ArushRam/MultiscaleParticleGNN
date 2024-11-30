@@ -31,6 +31,7 @@ class VoxelClustering(BasePooling):
             - voxel_size (dimension of a single voxel)
             - bounds (dx2 array, rows correspond to dimension, columns correspond to min/max bound)
         '''
+        super().__init__()
         self.voxel_size = voxel_size
         self.dim = bounds.shape[0]
         self.bounds_max = bounds[:,1]
